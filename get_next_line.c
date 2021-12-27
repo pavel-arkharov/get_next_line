@@ -6,7 +6,7 @@
 /*   By: parkharo <parkharo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 15:10:23 by parkharo          #+#    #+#             */
-/*   Updated: 2021/12/27 15:07:49 by parkharo         ###   ########.fr       */
+/*   Updated: 2021/12/27 15:36:27 by parkharo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,8 @@ static int	extract_cache(char **newline, char **cache, char **line)
 	if (*cache)
 	{
 		*newline = ft_chrsep(cache, '\n');
-		//*newline = ft_strchr(*cache, '\n');
 		if (*newline)
 		{
-			// **newline = '\0';
-			// *newline += 1;
 			*line = ft_strdup(*cache);
 			ft_strcpy(*cache, *newline);
 		}
@@ -44,11 +41,8 @@ static int	update_cache(char **newline, char **cache, char *buf)
 	char	*tmp;
 
 	*newline = ft_chrsep(&buf, '\n');
-	//*newline = ft_strchr(buf, '\n');
 	if (*newline)
 	{
-		// **newline = '\0';
-		// *newline += 1;
 		tmp = *cache;
 		*cache = ft_strdup(*newline);
 		free(tmp);
